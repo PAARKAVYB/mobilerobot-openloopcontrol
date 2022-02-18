@@ -34,7 +34,7 @@ Developed by: Paarkavy B
 '''
 
 
-'''
+```
 from robomaster import robot
 import time
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     time.sleep(1)
     ep_robot.close()
 
-'''
+```
 
 ## MobileRobot Movement Image:
 
