@@ -28,97 +28,65 @@ Execute the python program.
 '''
 #Python control code to move the mobilerobot along the predefined path.
 
-#Developed by: Paarkavy B
+Developed by: Paarkavy B
 
-#Register No.: 21500424
+ Register No.: 21500424
 '''
 
-```
+
+'''
 from robomaster import robot
 import time
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     ep_robot = robot.Robot()
     ep_robot.initialize(conn_type="ap")
-
-    ep_led = ep_robot.led
-
-    for i in range(2):
-        ep_led.set_led(comp="all",r=0,g=200,b=0,effect="on")   
-        time.sleep(2)
-        ep_led.set_led(comp="all",r=128,g=0,b=123,effect="on")   
-        time.sleep(2)
-
     ep_chassis = ep_robot.chassis
-
-    ep_chassis.move(x=2.5, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
+    ep_chassis.move(x=0.2, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-15, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0.4,y=0 ,z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-20, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0.3, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=-43, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=1.9, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=25, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0.5, y=0, z=0, xy_speed=1).wait_for_completed()
     ep_chassis.move(x=0, y=0, z=45, xy_speed=1).wait_for_completed()
-
-    ep_chassis.move(x=1.5, y=-.3, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1.5, y=-.2, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=10, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=.2, y=0, z=20, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=40, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=.5, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=40, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=.3, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=40, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=40, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=40, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1.5, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=-.3, z=0, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=0, y=0, z=30, xy_speed=0.75).wait_for_completed()
-
-    ep_chassis.move(x=1, y=0, z=0, xy_speed=0.75).wait_for_completed()
-
-    print("completed")
-
-
-
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=23, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0.9, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=0, y=0, z=35, xy_speed=1).wait_for_completed()
+    ep_chassis.move(x=1.2, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led = ep_robot.led
+    for i in range(10):
+        ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")   
+        time.sleep(2)
+        ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
+        time.sleep(2)
+        ep_led.set_led(comp="all",r=0,g=0,b=255,effect="on")
+        time.sleep(2)        
+        ep_chassis.drive_speed(x=0,y=0,z=180)
+    time.sleep(1)
     ep_robot.close()
-    ```
+
+'''
 
 ## MobileRobot Movement Image:
 
-![robomaster](https://user-images.githubusercontent.com/93509383/154626985-d46c08f5-171e-4bb8-bd4c-34bf4320aecb.png)
+![output](robomaster.png)
 
+## Initial Position:
 
-## Robot Start Point:
+![output](robo1.png)
 
-![robot1](https://user-images.githubusercontent.com/93509383/154627032-ac5f8a91-b593-47ae-bf6f-6ffd9f6db616.png)
+## Final Position:
 
-
-## Robot End Point:
-
-![robot2](https://user-images.githubusercontent.com/93509383/154627193-5aa741d9-8669-4725-993e-788f031beab7.png)
-
-
+![output](robo2.png)
 
 ## MobileRobot Movement Video:
 
 Embed video here: 🎬🎬🎬https://youtu.be/dH8hXgzS__Y🎬🎬🎬
+    
 
 
 ## Result:
